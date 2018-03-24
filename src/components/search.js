@@ -3,7 +3,8 @@ angular.module('video-player')
 .component('search', {
   // TODO
   bindings: {
-    result: '<'
+    result: '<',
+    service: '<'
   },
 
   controller: function() {
@@ -11,7 +12,7 @@ angular.module('video-player')
 
     this.keyUpHandler = ($event) => {
       if ($event.key === 'Enter') {
-        //console.log(this.searchQuery);
+        console.log(this.searchQuery);
         this.result(this.searchQuery);
       }
     };
@@ -19,6 +20,7 @@ angular.module('video-player')
     this.buttonHandler = ($event) => {
       console.log(this.searchQuery);
       this.result(this.searchQuery);
+      // youTube.search();
     }
 
   },
